@@ -72,7 +72,7 @@ static void parse_args(int argc, char** argv) {
             err = get_val(argv[2], max_br_fname, &max_br_val);
             ENN_EXPECT(!err, strerror(err));
 
-            printf("%i", get_per_val(br_val, max_br_val));
+            printf("%i\n", get_per_val(br_val, max_br_val));
             break;
         case CMD_SET:
             ENN_EXPECT(argc == 4 && is_dev_dname(argv[2])
@@ -95,7 +95,7 @@ static void parse_args(int argc, char** argv) {
                 ENN_EXPECT(!err, strerror(err));
             }
 
-            printf("%i", get_per_val(br_val, max_br_val));
+            printf("%i\n", get_per_val(br_val, max_br_val));
             break;
         case CMD_VER:
             printf("%s\n", get_version());
